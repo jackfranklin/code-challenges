@@ -4,7 +4,7 @@ import ElmTest exposing (..)
 
 import String
 import TestInput
-import App exposing (wrappingAmount, amountForPresents)
+import App exposing (wrappingAmount, amountForPresents, ribbonAmountForPresents)
 
 
 
@@ -19,5 +19,7 @@ all =
         [
             test "basic" (assertEqual 58 (wrappingAmount 2 3 4)),
             test "list" (assertEqual 58 (amountForPresents presents)),
-            test "actual" (assertEqual 1598415 (amountForPresents TestInput.data))
+            test "actual" (assertEqual 1598415 (amountForPresents TestInput.data)),
+            test "ribbon basic" (assertEqual 34 (ribbonAmountForPresents presents)),
+            test "ribbon actual" (assertEqual 3812909 (ribbonAmountForPresents TestInput.data))
         ]
